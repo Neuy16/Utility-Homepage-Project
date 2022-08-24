@@ -4,22 +4,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Title Here</title>
+  <title>Productivity Hoomepage</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="" />
+
+  <!--weather app api link-->
+  <link href="https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=ce799edeec116539e35783770070d97d"/>
 </head>
 
 
 <body>
-<!-- I changed this -->
   <header>
-<h1>testing</h1>
-
-
 
   </header>
 
   <main>
+
+<!--begin weather app-->
+    <div class="weatherContainer">
+      <div class="search">
+          <input type="text" class="searchBar" placeholder="search">
+          <button>Get Weather</button>
+      </div>
+
+      <div id="weather">
+          <div id="city">weather in city</div>
+          <div id="temp">temp in city</div>
+          <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" id="icon" />
+          <div id="description">description of weather</div>
+      </div>
+  </div>
+<!--end weather app-->
 
   </main>
 
