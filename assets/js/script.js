@@ -32,6 +32,18 @@ weather.fetchWeather("Detroit");
 //end weather app
 
 
+//begin web link button section
+function newbutton() {
+    var div = document.querySelector('.presetLinks');
+    var input = document.querySelector('#getUrlForButton');
+
+    var dom = '<a href="https://' + input.value + '.com' + '" target="_blank">';
+    dom += '<input type="button" class="menu" value=" ' + input.value  + ' "></a>';
+
+    div.innerHTML += dom;
+}
+//end web link button section
+
 
 
 
