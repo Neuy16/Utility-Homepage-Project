@@ -22,21 +22,21 @@
 async function getYeezy() {
     const response = await fetch('https://api.kanye.rest');
     const data = await response.json();
-    
-    console.log(data);
+    document.getElementById('quote').innerHTML = "''" + data.quote + "''"; 
+    console.log(data.quote);
 
-    
+
 }
 getYeezy();
 /* Tellng the time */
 function time() {
     var currentDay = moment().format('dddd MMMM Do YYYY');
-    var currentTime = moment().format('hh:mm:ss');
+    var currentTime = moment().format('hh:mm');
+    document.getElementById('time').innerHTML = currentTime;
+    document.getElementById('day').innerHTML = currentDay;
 
-    console.log(currentDay);
-    console.log(currentTime);
 }
-time();
+setInterval(time, 1000);
 
 
 
