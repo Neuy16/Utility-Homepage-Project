@@ -4,26 +4,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Title Here</title>
+  <title>Productivity Hoomepage</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!--weather app api link-->
+  <link href="https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=ce799edeec116539e35783770070d97d"/>
 </head>
 
-
 <body>
-<!-- I changed this -->
-  <header>
-<h1>testing</h1>
 
+  <!-- left side -->
+  <aside>
+    <div>
+      <h1 id="date"></h1>
+    </div>
+    <div>
+      <h1 id="time"></h1>
+    </div>
+    
+    <!--begin weather app-->
+    <div class="weatherContainer">
+      <div class="search">
+          <input type="text" class="searchBar" placeholder="search">
+          <button>Get Weather</button>
+      </div>
 
+      <div id="weather">
+          <div id="city">weather in city</div>
+          <div id="temp">temp in city</div>
+          <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" id="icon" />
+          <div id="description">description of weather</div>
+      </div>
+  </div>
+<!--end weather app-->
 
-  </header>
-
+    <div>
+      <h2>Pinned Notes</h2>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </aside>
+  
+<!-- Center content -->
   <main>
-    <div id="time"></div>
-    <div id="day"></div>
 
+    <div>
+      <h1>Calendar</h1>
+      <div>
+
+      </div>
+    </div>
   </main>
+
+
+
+
+
+
+
+
+<!--begin web link button section-->
+<!--stores pre set link buttons-->
+<div class='presetLinks'>
+  <a href='https://stackoverflow.com/' target='_blank'><input type='button' class='menu'
+     value='Stack Overflow'></a>
+  <a href='https://github.com/' target='_blank'><input type='button' class='menu'
+     value='GitHub'></a>
+  <a href='https://google.com/' target='_blank'><input type='button' class='menu'
+     value='Google'></a>
+</div>
+
+<!--creates new button-->
+<div class='buttonCreator'>
+  <h3>input new website by name (not the url)</h3>
+  <input type='text' id='getUrlForButton'></input>
+  <input type='button' value='Create New Button' onclick='newbutton();'></input>
+</div>
+<!--end web link button section-->
+
+
+
+
+
+
+
+
 
   <footer>
     <div id="quote"></div>
