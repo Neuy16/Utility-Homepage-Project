@@ -14,7 +14,6 @@ let weather = {
         const { temp, humidity } = data.main;
         const { icon, description } = data.weather[0];
         const { speed } = data.wind;
-        document.querySelector("#city").innerText = "Weather in " + name;
         document.querySelector("#icon").src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
         document.querySelector("#description").innerText = description;
         document.querySelector("#temp").innerText = temp + "°f";
