@@ -11,7 +11,7 @@
   <link href="https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=ce799edeec116539e35783770070d97d"/>
 </head>
 
-<body>
+<body class="bg-slate-800">
 
   <!-- left side -->
   <aside>
@@ -25,12 +25,11 @@
     <!--begin weather app-->
     <div class="weatherContainer">
       <div class="search">
-          <input type="text" class="searchBar" placeholder="search">
-          <button>Get Weather</button>
+          <input type="text" class="searchBar rounded border-4 border-slate-600 bg-slate-600 placeholder-white" placeholder="search">
+          <button class="rounded border-4 border-sky-300 bg-sky-300">Get Weather</button>
       </div>
 
-      <div id="weather">
-          <div id="city">weather in city</div>
+      <div id="weather" class="text-white">
           <div id="temp">temp in city</div>
           <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" id="icon" />
           <div id="description">description of weather</div>
