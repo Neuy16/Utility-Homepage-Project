@@ -8,89 +8,84 @@
   <link rel="stylesheet" href="./assets/css/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <!--weather app api link-->
-  <link href="https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=ce799edeec116539e35783770070d97d"/>
+  <link
+    href="https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=ce799edeec116539e35783770070d97d" />
 </head>
 
 <body class="bg-slate-800">
 
-<body>
+  <body>
 
-  <header>
+    <header>
 
-  <!-- left side -->
-  <aside>
-    <div>
-      <h1 id="date"></h1>
-    </div>
-    <div>
-      <h1 id="time"></h1>
-    </div>
-    
-    <!--begin weather app-->
-    <div class="weatherContainer">
-      <div class="search">
-          <input type="text" class="searchBar rounded border-4 border-slate-600 bg-slate-600 placeholder-white" placeholder="search">
-          <button class="rounded border-4 border-sky-300 bg-sky-300">Get Weather</button>
-      </div>
+      <!-- left side -->
+      <aside>
+        <div>
+          <h1 id="date"></h1>
+        </div>
+        <div>
+          <h1 id="time"></h1>
+        </div>
 
-
-      <div id="weather" class="text-white">
-          <div id="temp">temp in city</div>
-          <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" id="icon" />
-          <div id="description">description of weather</div>
-      </div>
-  </div>
-<!--end weather app-->
-
-    <div>
-      <h2>Pinned Notes</h2>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
-  </aside>
-  
-<!-- Center content -->
-  <main>
-
-    <div>
-      <h1>Calendar</h1>
-      <div>
-
-      </div>
-    </div>
-  </main>
+        <!--begin weather app-->
+        <div class="weatherContainer">
+          <div class="search">
+            <input type="text" class="searchBar rounded border-4 border-slate-600 bg-slate-600 placeholder-white"
+              placeholder="search">
+            <button class="rounded border-4 border-sky-300 bg-sky-300">Get Weather</button>
+          </div>
 
 
+          <div id="weather" class="text-white">
+            <div id="temp">temp in city</div>
+            <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" id="icon" />
+            <div id="description">description of weather</div>
+          </div>
+        </div>
+        <!--end weather app-->
 
+        <div>
+          <h2>Pinned Notes</h2>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </aside>
 
+      <!-- Center content -->
+      <main>
 
+        <div>
+          <h1>Calendar</h1>
+          <div>
 
+          </div>
+        </div>
+      </main>
 
+      <!--begin web link button section-->
+      <!--stores pre set link buttons-->
+        <div class="bg-slate-600 grid grid-cols-8">
+          <div class='presetLinks'>
+            <a href='https://stackoverflow.com/' target='_blank'><input type='button' class='menu'
+                value='Stack Overflow'></a>
+            <a href='https://github.com/' target='_blank'><input type='button' class='menu' value='GitHub'></a>
+            <a href='https://google.com/' target='_blank'><input type='button' class='menu' value='Google'></a>
+          </div>
 
-<!--begin web link button section-->
-<!--stores pre set link buttons-->
-<div class='presetLinks'>
-  <a href='https://stackoverflow.com/' target='_blank'><input type='button' class='menu'
-     value='Stack Overflow'></a>
-  <a href='https://github.com/' target='_blank'><input type='button' class='menu'
-     value='GitHub'></a>
-  <a href='https://google.com/' target='_blank'><input type='button' class='menu'
-     value='Google'></a>
-</div>
-
-<!--creates new button-->
-<div class='buttonCreator'>
-  <h3>input new website by name (not the url)</h3>
-  <input type='text' id='getUrlForButton'></input>
-  <input type='button' value='Create New Button' onclick='newbutton();'></input>
-</div>
-<!--end web link button section-->
+          <!--creates new button-->
+          <div class='buttonCreator'> 
+            <h3>Input new website by name (not the url)</h3>
+            <input type='text' id='getUrlForButton'></input>
+            <input type='button' value='Create New Button' onclick='newbutton();'></input>
+          </div>
+        </div>
+      <!--end web link button section-->
 
 
 
@@ -100,11 +95,11 @@
 
 
 
-  <footer>
-    <div id="quote"></div>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="./assets/js/script.js"></script>
-</body>
+      <footer>
+        <div id="quote"></div>
+      </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+      <script src="./assets/js/script.js"></script>
+  </body>
 
 </html>

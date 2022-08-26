@@ -72,7 +72,7 @@ function time() {
     var currentDay = moment().format('dddd MMMM Do YYYY');
     var currentTime = moment().format('hh:mm');
     document.getElementById('time').innerHTML = currentTime;
-    document.getElementById('day').innerHTML = currentDay;
+    document.getElementById('date').innerHTML = currentDay;
 
 }
 setInterval(time, 1000);
