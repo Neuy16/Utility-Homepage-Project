@@ -16,34 +16,34 @@
 
 <body>
 
-  <header>
+  <header class= "absolute top-1 right-1">
 
 <!-- Open The Schedule Modal -->
-<button id="scheduleModalBtn">Add Event to Schedule</button>
+<button id="scheduleModalBtn" class = "rounded border-10 border-sky-300 bg-sky-300">Add Event to Schedule</button>
 <div id="scheduleModal" class="modal">
   <div class="modal-content">
-    <span class="close">&times;</span>
+    <span class="closeBtn">&times;</span>
     <p>schedule modal text</p>
   </div>
 </div>
 
 <!-- Open The Web Link Modal -->
-<button id="webLinkModalBtn">Add Web Link</button>
+<button id="webLinkModalBtn" class = "rounded border-10 border-sky-300 bg-sky-300">Add Web Link</button>
 <div id="webLinkModal" class="modal">
   <div class="modal-content">
-    <span class="close">&times;</span>
+    <span class="webCloseBtn">&times;</span>
     <p>web link modal text</p>
   </div>
 </div>
 
 <!-- Open The Notes Page -->
-<button id="openNotesPage">Notes</button>
+<button id="openNotesPage" class = "rounded border-10 border-sky-300 bg-sky-300">Notes</button>
 
 <!--Open the settings modal-->
-<button id="settingsModalBtn">Settings</button>
+<button id="settingsModalBtn" class = "rounded border-10 border-sky-300 bg-sky-300">Settings</button>
 <div id="settingsModal" class="modal">
   <div class="modal-content">
-    <span class="close">&times;</span>
+    <span class="closeBtn">&times;</span>
     <p>settings modal</p>
   </div>
 </div>
@@ -53,18 +53,18 @@
 
   <!-- left side -->
   <aside>
-    <div>
+    <div class="top-1 left-1 block p-6 rounded-lg border-10 shadow-lg bg-white max-w-sm">
       <h1 id="date"></h1>
     </div>
-    <div>
+    <div class="top-1 left-1 block p-6 rounded-lg border-10 shadow-lg bg-white max-w-sm">
       <h1 id="time"></h1>
     </div>
     
     <!--begin weather app-->
     <div class="weatherContainer">
       <div class="search">
-          <input type="text" class="searchBar rounded border-4 border-slate-600 bg-slate-600 placeholder-white" placeholder="search">
-          <button class="rounded border-4 border-sky-300 bg-sky-300">Get Weather</button>
+          <input type="text" class="searchBar rounded border-10 border-slate-600 bg-slate-600 placeholder-white" placeholder="search">
+          <button class="rounded border-10 border-sky-300 bg-sky-300">Get Weather</button>
       </div>
 
 
@@ -106,19 +106,19 @@
 <!--begin web link button section-->
 <!--stores pre set link buttons-->
 <div class='presetLinks'>
-  <a href='https://stackoverflow.com/' target='_blank'><input type='button' class='menu'
+  <a href='https://stackoverflow.com/' target='_blank'><input type='button' class="rounded border-10 border-sky-300 bg-sky-300"
      value='Stack Overflow'></a>
-  <a href='https://github.com/' target='_blank'><input type='button' class='menu'
+  <a href='https://github.com/' target='_blank'><input type='button' class="rounded border-10 border-sky-300 bg-sky-300"
      value='GitHub'></a>
-  <a href='https://google.com/' target='_blank'><input type='button' class='menu'
+  <a href='https://google.com/' target='_blank'><input type='button' class="rounded border-10 border-sky-300 bg-sky-300"
      value='Google'></a>
 </div>
 
 <!--creates new button-->
 <div class='buttonCreator'>
   <h3>input new website by name (not the url)</h3>
-  <input type='text' id='getUrlForButton'></input>
-  <input type='button' value='Create New Button' onclick='newbutton();'></input>
+  <input type='text' class=" rounded border-10 border-slate-600 bg-slate-600 placeholder-white" id='getUrlForButton' placeholder="input website here"></input>
+  <input type='button' class="rounded border-10 border-sky-300 bg-sky-300" value='Create New Button' onclick='newbutton();'></input>
 </div>
 <!--end web link button section-->
 
@@ -132,6 +132,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
-
-
 </html>
