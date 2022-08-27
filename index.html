@@ -14,9 +14,42 @@
 
 <body class="bg-slate-800">
 
-  <body>
+<body>
 
-    <header>
+  <header>
+
+<!-- Open The Schedule Modal -->
+<button id="scheduleModalBtn">Add Event to Schedule</button>
+<div id="scheduleModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>schedule modal text</p>
+  </div>
+</div>
+
+<!-- Open The Web Link Modal -->
+<button id="webLinkModalBtn">Add Web Link</button>
+<div id="webLinkModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>web link modal text</p>
+  </div>
+</div>
+
+<!-- Open The Notes Page -->
+<button id="openNotesPage">Notes</button>
+
+<!--Open the settings modal-->
+<button id="settingsModalBtn">Settings</button>
+<div id="settingsModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>settings modal</p>
+  </div>
+</div>
+
+
+  </header>
 
   <!-- left side -->
   <aside>
@@ -70,10 +103,6 @@
 
 
 
-
-
-
-
 <!--begin web link button section-->
 <!--stores pre set link buttons-->
 <div class='presetLinks'>
@@ -97,15 +126,10 @@
 
 
 
-
-
-
-
   <footer>
     <div id="quote"></div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
-
 </html>
