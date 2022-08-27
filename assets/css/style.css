@@ -9,30 +9,31 @@
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-
+    background-color: rgba(0,0,0,0.5);
   }
   
   /* Modal Content/Box */
   .modal-content {
     background-color: #fff;
-    margin: 15% ;
+    margin: 5% auto;
     padding: 20px;
     border: 1px;
-    width: 80%;
+    width: 80vw;
+    height: 80vh;
   }
   
   /* The Close Button */
-  .close {
+  .closeBtn {
+    color: grey;
     float: right;
+    font-size: 28px;
   }
-  .close:hover,
-  .close:focus {
-    color: black;
+  .closeBtn:hover,
+  .closeBtn:focus {
+    color: red;
     text-decoration: none;
     cursor: pointer;
   }
-
-
 
 
 

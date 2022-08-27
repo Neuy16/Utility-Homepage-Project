@@ -37,7 +37,7 @@ function newbutton() {
     var input = document.querySelector('#getUrlForButton');
 
     var dom = '<a href="https://' + input.value + '.com' + '" target="_blank">';
-    dom += '<input type="button" class="menu" value=" ' + input.value  + ' "></a>';
+    dom += '<input type="button" class="rounded border-10 border-sky-300 bg-sky-300" value=" ' + input.value  + ' "></a>';
 
     div.innerHTML += dom;
 }
@@ -46,63 +46,51 @@ function newbutton() {
 
 //begin menu section
 //schedule modal
-var modal1 = document.getElementById("scheduleModal");
-var btn1 = document.getElementById("scheduleModalBtn");
-var span = document.getElementsByClassName("close")[0];
+var scheduleModal = document.getElementById("scheduleModal");
+var scheduleModalBtn = document.getElementById("scheduleModalBtn");
+var scheduleCloseBtn = document.getElementsByClassName("closeBtn")[0];
+ 
+scheduleModalBtn.addEventListener("click", openScheduleModal);
+scheduleCloseBtn.addEventListener("click", closeScheduleModal);
+window.addEventListener("click", clickOutsideScheduleModal);
 
-btn1.onclick = function() {
-  modal1.style.display = "block";
+function openScheduleModal () {
+  scheduleModal.style.display = "block";
 }
 
-span.onclick = function() {
-  modal1.style.display = "none";
+function closeScheduleModal () {
+  scheduleModal.style.display = "none";
 }
 
-window.onclick = function(event) {
-  if (event.target == modal1) {
-    modal1.style.display = "none";
+function clickOutsideScheduleModal (scheduleEvent) {
+  if (scheduleEvent.target == scheduleModal) {
+    scheduleModal.style.display = "none";
   }
 }
 
 //web link modal
-var modal2 = document.getElementById("webLinkModal");
-var btn2 = document.getElementById("webLinkModalBtn");
-var span = document.getElementsByClassName("close")[0];
+var webLinkModal = document.getElementById("webLinklModal");
+var webLinkModalBtn = document.getElementById("webLinkModalBtn");
+var webLinkCloseBtn = document.getElementsByClassName("webCloseBtn")[0];
+ 
+webLinkModalBtn.addEventListener("click", openWebLinkModal);
+webLinkCloseBtn.addEventListener("click", closeWebLinkModal);
+window.addEventListener("click", clickOutsideWebLinkModal);
 
-btn2.onclick = function() {
-  modal2.style.display = "block";
+function openWebLinkModal () {
+  webLinkModal.style.display = "block";
 }
 
-span.onclick = function() {
-  modal2.style.display = "none";
+function closeWebLinkModal () {
+  webLinkModal.style.display = "none";
 }
 
-window.onclick = function(event) {
-  if (event.target == modal2) {
-    modal2.style.display = "none";
+function clickOutsideWebLinkModal (webLinkEvent) {
+  if (webLinkEvent.target == webLinkModal) {
+    webLinkModal.style.display = "none";
   }
 }
-
-
 //settings modal
-var modal3 = document.getElementById("settingsModal");
-var btn3 = document.getElementById("settingsModalBtn");
-var span = document.getElementsByClassName("close")[0];
-
-btn3.onclick = function() {
-  modal3.style.display = "block";
-}
-
-span.onclick = function() {
-  modal3.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == modal3) {
-    modal3.style.display = "none";
-  }
-}
-
 
 //end menu section
 // Jacob H's Section
