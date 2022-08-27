@@ -44,8 +44,67 @@ function newbutton() {
 //end web link button section
 
 
+//begin menu section
+//schedule modal
+var modal1 = document.getElementById("scheduleModal");
+var btn1 = document.getElementById("scheduleModalBtn");
+var span = document.getElementsByClassName("close")[0];
+
+btn1.onclick = function() {
+  modal1.style.display = "block";
+}
+
+span.onclick = function() {
+  modal1.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal1) {
+    modal1.style.display = "none";
+  }
+}
+
+//web link modal
+var modal2 = document.getElementById("webLinkModal");
+var btn2 = document.getElementById("webLinkModalBtn");
+var span = document.getElementsByClassName("close")[0];
+
+btn2.onclick = function() {
+  modal2.style.display = "block";
+}
+
+span.onclick = function() {
+  modal2.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
+}
 
 
+//settings modal
+var modal3 = document.getElementById("settingsModal");
+var btn3 = document.getElementById("settingsModalBtn");
+var span = document.getElementsByClassName("close")[0];
+
+btn3.onclick = function() {
+  modal3.style.display = "block";
+}
+
+span.onclick = function() {
+  modal3.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal3) {
+    modal3.style.display = "none";
+  }
+}
+
+
+//end menu section
 // Jacob H's Section
 fetch("http://api.mediastack.com/v1/news?access_key=e88991d67556e60781314a23d73242b8")
     .then((response) => response.json())
@@ -72,7 +131,7 @@ function time() {
     var currentDay = moment().format('dddd MMMM Do YYYY');
     var currentTime = moment().format('hh:mm');
     document.getElementById('time').innerHTML = currentTime;
-    document.getElementById('day').innerHTML = currentDay;
+    document.getElementById('date').innerHTML = currentDay;
 
 }
 setInterval(time, 1000);
