@@ -154,8 +154,7 @@ fetch("http://api.mediastack.com/v1/news?access_key=e88991d67556e60781314a23d732
 async function getYeezy() {
     const response = await fetch('https://api.kanye.rest');
     const data = await response.json();
-    document.getElementById('quote').innerHTML = "''" + data.quote + "''"; 
-    console.log(data.quote);
+    document.getElementById('quote').innerHTML = "''" + data.quote + "''" + '  -Kanye West'; 
 
 
 }
