@@ -14,128 +14,129 @@
 
 <body class="bg-slate-800">
 
-<body>
+  <body>
 
-  <header class= "absolute top-1 right-1">
+    <header class="absolute top-1 right-1">
 
-  <!-- Open The Schedule Modal -->
-  <button id="modalBtn1" class = "rounded border-10 border-sky-300 bg-sky-300">Add Event to Schedule</button>
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <span class="closeBtn1">&times;</span>
-      <p>schedule modal text</p>
-    </div>
-  </div>
-  
-  <!-- Open The Web Link Modal -->
-  <button id="modalBtn2" class = "rounded border-10 border-sky-300 bg-sky-300">Add Web Link</button>
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <span class="closeBtn2">&times;</span>
-      <p>web link modal content</p>
-    </div>
-  </div>
-  
-  <!-- Open The Notes Page -->
-  <button id="modalBtn3" class = "rounded border-10 border-sky-300 bg-sky-300">Notes</button>
-  <div id="modal3" class="modal">
-    <div class="modal-content">
-      <span class="closeBtn3">&times;</span>
-      <input type="text" id="note">
-      <textarea placeholder="your note here"></textarea>
-    </div>
-  </div>
-  
-  <!--Open the settings modal-->
-  <button id="modalBtn4" class = "rounded border-10 border-sky-300 bg-sky-300">Settings</button>
-  <div id="modal4" class="modal">
-    <div class="modal-content">
-      <span class="closeBtn4">&times;</span>
-      <p>settings modal content</p>
-    </div>
-  </div>
-
-  </header>
-
-  <!-- left side -->
-  <aside>
-    <div class="top-1 left-1 block p-6 rounded-lg border-10 shadow-lg bg-white max-w-sm">
-      <h1 id="date"></h1>
-    </div>
-    <div class="top-1 left-1 block p-6 rounded-lg border-10 shadow-lg bg-white max-w-sm">
-      <h1 id="time"></h1>
-    </div>
-    
-    <!--begin weather app-->
-    <div class="weatherContainer">
-      <div class="search">
-          <input type="text" class="searchBar rounded border-10 border-slate-600 bg-slate-600 placeholder-white" placeholder="search">
-          <button class="rounded border-10 border-sky-300 bg-sky-300">Get Weather</button>
+      <!-- Open The Schedule Modal -->
+      <button id="modalBtn1" class="rounded border-10 border-sky-300 bg-sky-300">Add Event to Schedule</button>
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <span class="closeBtn1">&times;</span>
+          <p>schedule modal text</p>
+        </div>
       </div>
 
+      <!-- Open The Web Link Modal -->
+      <button id="modalBtn2" class="rounded border-10 border-sky-300 bg-sky-300">Add Web Link</button>
+      <div id="modal2" class="modal">
+        <div class="modal-content">
+          <span class="closeBtn2">&times;</span>
+          <!--creates new web link button-->
+          <div class='buttonCreator'>
+            <h3>input new website by name (not the url)</h3>
+            <input type='text' class=" rounded border-10 border-slate-600 bg-slate-600 placeholder-white"
+              id='getUrlForButton' placeholder="input website here"></input>
+            <input type='button' class="rounded border-10 border-sky-300 bg-sky-300" value='Create New Button'
+              onclick='newbutton();'></input>
+          </div>
+        </div>
+      </div>
 
+      <!-- Open The Notes Page -->
+      <button id="modalBtn3" class="rounded border-10 border-sky-300 bg-sky-300">Notes</button>
+      <div id="modal3" class="modal">
+        <div class="modal-content">
+          <span class="closeBtn3">&times;</span>
+          <input type="text" id="note">
+          <textarea placeholder="your note here"></textarea>
+        </div>
+      </div>
+
+      <!--Open the settings modal-->
+      <button id="modalBtn4" class="rounded border-10 border-sky-300 bg-sky-300">Settings</button>
+      <div id="modal4" class="modal">
+        <div class="modal-content">
+          <span class="closeBtn4">&times;</span>
+          <p>input your city</p>
+          <!--weather location searchbar-->
+          <div class="weatherContainer">
+            <div class="search">
+              <input type="text" class="searchBar rounded border-10 border-slate-600 bg-slate-600 placeholder-white"
+                placeholder="search">
+              <button class="rounded border-10 border-sky-300 bg-sky-300">Get Weather</button>
+            </div>
+          </div>
+        </div>
+
+    </header>
+
+    <!-- left side -->
+    <aside>
+      <div class="top-1 left-1 block p-6 rounded-lg border-10 shadow-lg bg-white max-w-sm">
+        <h1 id="date" class="text-5xl"></h1>
+      </div>
+      <div class="top-1 left-1 block p-6 rounded-lg border-10 shadow-lg bg-white max-w-sm">
+        <h1 id="time" class="text-8xl"></h1>
+      </div>
+
+      <!--begin weather app display-->
       <div id="weather" class="text-white">
-          <div id="temp">temp in city</div>
-          <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" id="icon" />
-          <div id="description">description of weather</div>
+        <div id="temp">temp in city</div>
+        <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" id="icon" />
+        <div id="description">description of weather</div>
       </div>
-  </div>
-<!--end weather app-->
+      </div>
+      <!--end weather app display-->
 
-    <div>
-      <h2>Pinned Notes</h2>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
-  </aside>
-  
-<!-- Center content -->
-  <main>
-
-    <div>
-      <h1>Calendar</h1>
       <div>
-
+        <h2>Pinned Notes</h2>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
-    </div>
-  </main>
+    </aside>
 
+    <!-- Center content -->
+    <main>
 
+      <div>
+        <h1>Calendar</h1>
+        <div>
 
+        </div>
+      </div>
+    </main>
 
 <!--begin web link button section-->
-<!--stores pre set link buttons-->
-<div class='presetLinks'>
-  <a href='https://stackoverflow.com/' target='_blank'><input type='button' class="rounded border-10 border-sky-300 bg-sky-300"
-     value='Stack Overflow'></a>
-  <a href='https://github.com/' target='_blank'><input type='button' class="rounded border-10 border-sky-300 bg-sky-300"
-     value='GitHub'></a>
-  <a href='https://google.com/' target='_blank'><input type='button' class="rounded border-10 border-sky-300 bg-sky-300"
-     value='Google'></a>
-</div>
 
-<!--creates new button-->
-<div class='buttonCreator'>
-  <h3>input new website by name (not the url)</h3>
-  <input type='text' class=" rounded border-10 border-slate-600 bg-slate-600 placeholder-white" id='getUrlForButton' placeholder="input website here"></input>
-  <input type='button' class="rounded border-10 border-sky-300 bg-sky-300" value='Create New Button' onclick='newbutton();'></input>
-</div>
-<!--end web link button section-->
+    <!--begin web link button section-->
+    <!--stores pre set web link buttons-->
+    <div class='presetLinks absolute right-1 block p-6'>
+      <a href='https://stackoverflow.com/' target='_blank'><input type='button'
+          class="rounded border-10 border-sky-300 bg-sky-300" value='Stack Overflow'></a>
+      <a href='https://github.com/' target='_blank'><input type='button'
+          class="rounded border-10 border-sky-300 bg-sky-300" value='GitHub'></a>
+      <a href='https://google.com/' target='_blank'><input type='button'
+          class="rounded border-10 border-sky-300 bg-sky-300" value='Google'></a>
+    </div>
+    <!--end web link button section-->
 
 
 
 
+ <!--begiin kanye quote section-->
+    <footer>
+      <div id="quote" class="absolute bottom-1 right-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm""></div>
+    </footer>
+ <!--end end kanye quote section-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
 
-  <footer>
-    <div id="quote"></div>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="./assets/js/script.js"></script>
-</body>
 </html>
