@@ -6,8 +6,8 @@ let weather = {
     apiKey: "ce799edeec116539e35783770070d97d",
     fetchWeather: function (city) {
         fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + this.apiKey)
-        .then((response) => response.json())
-        .then((data) => this.displayWeather(data));
+            .then((response) => response.json())
+            .then((data) => this.displayWeather(data));
     },
     displayWeather: function (data) {
         const { name } = data;
@@ -37,7 +37,7 @@ function newbutton() {
     var input = document.querySelector('#getUrlForButton');
 
     var dom = '<a href="https://' + input.value + '.com' + '" target="_blank">';
-    dom += '<input type="button" class="menu" value=" ' + input.value  + ' "></a>';
+    dom += '<input type="button" class="menu" value=" ' + input.value + ' "></a>';
 
     div.innerHTML += dom;
 }
@@ -49,7 +49,8 @@ function newbutton() {
 // Jacob H's Section
 fetch("http://api.mediastack.com/v1/news?access_key=e88991d67556e60781314a23d73242b8")
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => displayNews(data))
+
 
 
 
@@ -61,7 +62,7 @@ fetch("http://api.mediastack.com/v1/news?access_key=e88991d67556e60781314a23d732
 async function getYeezy() {
     const response = await fetch('https://api.kanye.rest');
     const data = await response.json();
-    document.getElementById('quote').innerHTML = "''" + data.quote + "''"; 
+    document.getElementById('quote').innerHTML = "''" + data.quote + "''";
     console.log(data.quote);
 
 
