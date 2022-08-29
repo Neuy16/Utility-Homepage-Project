@@ -13,120 +13,160 @@
 </head>
 
 <body class="bg-slate-800 grid grid-cols-6 gap-1">
-<!-- the date -->
+  <!-- the date -->
   <div class=" rounded-lg shadow-lg bg-white row-span-2">
     <h1 id="date" class="text-5xl"></h1>
   </div>
-<!-- calander -->
+  <!-- calander -->
   <div class="bg-slate-600 rounded-lg min-h-[50px] col-span-3 row-span-6 grid grid-row-7">
     <h1>Calendar</h1>
+    <div class="grid grid-cols-7 text-center border border-2 mx-20">
+      <div id='calModal0' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">1</div>
+      <div id='calModal1' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">2</div>
+      <div id='calModal2' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">3</div>
+      <div id='calModal3' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">4</div>
+      <div id='calModal4' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">5</div>
+      <div id='calModal5' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">6</div>
+      <div id='calModal6' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">7</div>
+      <div id='calModal7' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">8</div>
+      <div id='calModal8' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">9</div>
+      <div id='calModal9' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">10</div>
+      <div id='calModal10' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">11</div>
+      <div id='calModal11' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">12</div>
+      <div id='calModal12' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">13</div>
+      <div id='calModal13' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">14</div>
+      <div id='calModal14' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">15</div>
+      <div id='calModal15' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">16</div>
+      <div id='calModal16' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">17</div>
+      <div id='calModal17' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">18</div>
+      <div id='calModal18' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">19</div>
+      <div id='calModal19' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">20</div>
+      <div id='calModal20' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">21</div>
+      <div id='calModal21' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">22</div>
+      <div id='calModal22' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">23</div>
+      <div id='calModal23' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">24</div>
+      <div id='calModal24' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">25</div>
+      <div id='calModal25' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">26</div>
+      <div id='calModal26' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">27</div>
+      <div id='calModal27' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">28</div>
+      <div id='calModal28' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">29</div>
+      <div id='calModal29' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">30</div>
+    </div>
+
   </div>
-<!-- header and buttons -->
-    <header class="bg-slate-600 rounded-lg min-h-[50px] col-span-2">
+  <!-- header and buttons -->
+  <header class="bg-slate-600 rounded-lg min-h-[50px] col-span-2">
 
-      <!-- Open The Schedule Modal -->
-      <button id="modalBtn1" class="rounded border-10 border-sky-300 bg-sky-300">Add Event to Schedule</button>
-      <div id="modal1" class="modal">
-        <div class="modal-content">
-          <span class="closeBtn1">&times;</span>
-          <p>schedule modal text</p>
+    <!-- Open The Schedule Modal -->
+    <button id="modalBtn1" class="rounded border-10 border-sky-300 bg-sky-300">Add Event to Schedule</button>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <span class="closeBtn1">&times;</span>
+        <p>schedule modal text</p>
+      </div>
+    </div>
+
+    <!-- Open The Web Link Modal -->
+    <button id="modalBtn2" class="rounded border-10 border-sky-300 bg-sky-300">Add Web Link</button>
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <span class="closeBtn2">&times;</span>
+        <!--creates new web link button-->
+        <div class='buttonCreator'>
+          <h3>input new website by name (not the url)</h3>
+          <input type='text' class=" rounded border-10 border-slate-600 bg-slate-600 placeholder-white"
+            id='getUrlForButton' placeholder="input website here"></input>
+          <input type='button' class="rounded border-10 border-sky-300 bg-sky-300" value='Create New Button'
+            onclick='newbutton();'></input>
         </div>
       </div>
+    </div>
 
-      <!-- Open The Web Link Modal -->
-      <button id="modalBtn2" class="rounded border-10 border-sky-300 bg-sky-300">Add Web Link</button>
-      <div id="modal2" class="modal">
-        <div class="modal-content">
-          <span class="closeBtn2">&times;</span>
-          <!--creates new web link button-->
-          <div class='buttonCreator'>
-            <h3>input new website by name (not the url)</h3>
-            <input type='text' class=" rounded border-10 border-slate-600 bg-slate-600 placeholder-white"
-              id='getUrlForButton' placeholder="input website here"></input>
-            <input type='button' class="rounded border-10 border-sky-300 bg-sky-300" value='Create New Button'
-              onclick='newbutton();'></input>
+    <!-- Open The Notes Page -->
+    <button id="modalBtn3" class="rounded border-10 border-sky-300 bg-sky-300">Notes</button>
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <span class="closeBtn3">&times;</span>
+        <input type="text" id="note">
+        <textarea placeholder="your note here"></textarea>
+      </div>
+    </div>
+
+    <!--Open the settings modal-->
+    <button id="modalBtn4" class="rounded border-10 border-sky-300 bg-sky-300">Settings</button>
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <span class="closeBtn4">&times;</span>
+        <p>input your city</p>
+        <!--weather location searchbar-->
+        <div class="weatherContainer">
+          <div class="search">
+            <input type="text" class="searchBar rounded border-10 border-slate-600 bg-slate-600 placeholder-white"
+              placeholder="search">
+            <button class="rounded border-10 border-sky-300 bg-sky-300">Get Weather</button>
           </div>
         </div>
       </div>
 
-      <!-- Open The Notes Page -->
-      <button id="modalBtn3" class="rounded border-10 border-sky-300 bg-sky-300">Notes</button>
-      <div id="modal3" class="modal">
-        <div class="modal-content">
-          <span class="closeBtn3">&times;</span>
-          <input type="text" id="note">
-          <textarea placeholder="your note here"></textarea>
-        </div>
-      </div>
+  </header>
 
-      <!--Open the settings modal-->
-      <button id="modalBtn4" class="rounded border-10 border-sky-300 bg-sky-300">Settings</button>
-      <div id="modal4" class="modal">
-        <div class="modal-content">
-          <span class="closeBtn4">&times;</span>
-          <p>input your city</p>
-          <!--weather location searchbar-->
-          <div class="weatherContainer">
-            <div class="search">
-              <input type="text" class="searchBar rounded border-10 border-slate-600 bg-slate-600 placeholder-white"
-                placeholder="search">
-              <button class="rounded border-10 border-sky-300 bg-sky-300">Get Weather</button>
-            </div>
-          </div>
-        </div>
+  <!--begin web link button section-->
+  <!--stores pre set web link buttons-->
+  <div class='presetLinks p-6 bg-slate-600 rounded-lg min-h-[50px] row-span-5 col-span-2'>
+    <a href='https://stackoverflow.com/' target='_blank'><input type='button'
+        class="rounded border-10 border-sky-300 bg-sky-300" value='Stack Overflow'></a>
+    <a href='https://github.com/' target='_blank'><input type='button'
+        class="rounded border-10 border-sky-300 bg-sky-300" value='GitHub'></a>
+    <a href='https://google.com/' target='_blank'><input type='button'
+        class="rounded border-10 border-sky-300 bg-sky-300" value='Google'></a>
+  </div>
+  <div class="rounded-lg border-10 shadow-lg bg-white rounded-lg min-h-[50px]">
+    <h1 id="time" class="text-8xl"></h1>
+  </div>
+  <!--end web link button section-->
 
-    </header>
-    
-<!--begin web link button section-->
-    <!--stores pre set web link buttons-->
-    <div class='presetLinks p-6 bg-slate-600 rounded-lg min-h-[50px] row-span-5 col-span-2'>
-      <a href='https://stackoverflow.com/' target='_blank'><input type='button'
-          class="rounded border-10 border-sky-300 bg-sky-300" value='Stack Overflow'></a>
-      <a href='https://github.com/' target='_blank'><input type='button'
-          class="rounded border-10 border-sky-300 bg-sky-300" value='GitHub'></a>
-      <a href='https://google.com/' target='_blank'><input type='button'
-          class="rounded border-10 border-sky-300 bg-sky-300" value='Google'></a>
-    </div>
-    <div class="rounded-lg border-10 shadow-lg bg-white rounded-lg min-h-[50px]">
-      <h1 id="time" class="text-8xl"></h1>
-    </div>
-    <!--end web link button section-->
+  <!--begin weather app display-->
+  <div id="weather" class="text-white bg-slate-600 rounded-lg min-h-[50px]">
+    <div id="temp">temp in city</div>
+    <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" id="icon" />
+    <div id="description">description of weather</div>
+  </div>
 
-<!--begin weather app display-->
-      <div id="weather" class="text-white bg-slate-600 rounded-lg min-h-[50px]">
-        <div id="temp">temp in city</div>
-        <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" id="icon" />
-        <div id="description">description of weather</div>
-      </div>
+  </div>
+  <!--end weather app display-->
 
-    </div>
-    <!--end weather app display-->
+  <!-- Notes -->
+  <div class="bg-slate-600 rounded-lg min-h-[200px] row-span-3">
+    <h2>Pinned Notes</h2>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  </aside>
 
-<!-- Notes -->
-    <div class="bg-slate-600 rounded-lg min-h-[200px] row-span-3">
-      <h2>Pinned Notes</h2>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>S
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
-<!-- news -->
-    <div class="bg-slate-600 rounded-lg min-h-[70px] col-span-3">
-      <p>news section</p>
-    </div>
+  <!-- Center content -->
+  <!-- calandar -->
 
-<!--begiin kanye quote section-->
-  <footer  class=" block p-6 rounded-lg shadow-lg bg-white min-h-[70px] col-span-2">
+
+
+  <!-- news -->
+  <div class="bg-slate-600 rounded-lg min-h-[70px] col-span-3">
+    <p>news section</p>
+  </div>
+
+  <!--begiin kanye quote section-->
+  <footer class=" block p-6 rounded-lg shadow-lg bg-white min-h-[70px] col-span-2">
     <div id="quote"></div>
-    </footer>
-<!--end end kanye quote section-->
-    <script src=" https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js">
-    </script>
-      <script src="./assets/js/script.js"></script>
+  </footer>
+  <!--end end kanye quote section-->
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js">
+  </script>
+  <script src="./assets/js/script.js"></script>
 </body>
 
 
