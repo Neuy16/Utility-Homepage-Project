@@ -129,12 +129,3 @@ setInterval(time, 1000);
 
 
 // Andrew's Section
-function displayModal() {
-for (let i=0; i <=30; i++) {
-    document.getElementById('calModal' + i).addEventListener('click', {
-        scheduleModal
-    })
-};
-}
-
-displayModal();
