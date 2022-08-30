@@ -85,11 +85,7 @@ let weather = {
     const { speed } = data.wind;
     document.querySelector("#icon").src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
     document.querySelector("#description").innerText = description;
-<<<<<<< HEAD
-    document.querySelector("#temp").innerText = temp + "°f";
-=======
     document.querySelector("#temp").innerText = temp + " °f";
->>>>>>> main
   },
   search: function () {
     this.fetchWeather(document.querySelector(".searchBar").value);
@@ -108,17 +104,8 @@ weather.fetchWeather("Detroit");
 function newbutton() {
   var div = document.querySelector('.presetLinks');
   var input = document.querySelector('#getUrlForButton');
-
-<<<<<<< HEAD
-  var dom = '<a href="https://' + input.value + '.com' + '" target="_blank">';
-  dom += '<input type="button" class="rounded border-10 border-sky-300 bg-sky-300" value=" ' + input.value + ' "></a>';
-
-=======
-
   var dom = '<a href="https://' + input.value + '.com' + '" target="_blank">';
   dom += '<input type="button" class="mt-6 w-full min-h-[10vh] text-slate-800 text-7xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500" value=" ' + input.value + ' "></a>';
-
->>>>>>> main
   div.innerHTML += dom;
 }
 //end web link button section
@@ -134,10 +121,6 @@ closeBtn1.addEventListener("click", closeModal1);
 window.addEventListener("click", clickOutsideModal1);
 
 function openModal1() {
-<<<<<<< HEAD
-=======
-
->>>>>>> main
   modal1.style.display = "block";
 }
 
@@ -161,10 +144,6 @@ closeBtn2.addEventListener("click", closeModal2);
 window.addEventListener("click", clickOutsideModal2);
 
 function openModal2() {
-<<<<<<< HEAD
-=======
-
->>>>>>> main
   modal2.style.display = "block";
 }
 
@@ -188,10 +167,6 @@ closeBtn3.addEventListener("click", closeModal3);
 window.addEventListener("click", clickOutsideModal3);
 
 function openModal3() {
-<<<<<<< HEAD
-=======
-
->>>>>>> main
   modal3.style.display = "block";
 }
 
@@ -215,10 +190,6 @@ closeBtn4.addEventListener("click", closeModal4);
 window.addEventListener("click", clickOutsideModal4);
 
 function openModal4() {
-<<<<<<< HEAD
-=======
-
->>>>>>> main
   modal4.style.display = "block";
 }
 
@@ -235,9 +206,6 @@ function clickOutsideModal4(event4) {
 
 
 // Jacob H's Section
-<<<<<<< HEAD
-
-
 fetch("https://api.goperigon.com/v1/all?apiKey=eed9a585-f20e-4441-bcf0-ea92298d2788")
 .then(response => response.json())
 .then(data => {
@@ -249,29 +217,10 @@ fetch("https://api.goperigon.com/v1/all?apiKey=eed9a585-f20e-4441-bcf0-ea92298d2
 newsarticles = Array;
 console.log(newsarticles)
 });
-=======
-fetch("http://api.mediastack.com/v1/news?access_key=e88991d67556e60781314a23d73242b8")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-
->>>>>>> main
-
-
-
-
-  
 
 // Jacob Z's Section
 /* Fetching Kanye's wisdom */
 async function getYeezy() {
-<<<<<<< HEAD
-  const response = await fetch('https://api.kanye.rest');
-  const data = await response.json();
-  document.getElementById('quote').innerHTML = "''" + data.quote + "''" + '  -Kanye West';
-
-=======
->>>>>>> main
-
   const response = await fetch('https://api.kanye.rest');
   const data = await response.json();
   document.getElementById('quote').innerHTML = "''" + data.quote + "''" + '  -Kanye West';
