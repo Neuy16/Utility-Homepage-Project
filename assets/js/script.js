@@ -1,5 +1,74 @@
-// Dakota's Section
+// Dakota's Section   verylight#f1f5f9 light#cbd5e1   dark#475569 verydark#1e293b 
 
+// light mode toggle
+var sectionBox = document.getElementsByTagName("section");
+var headerBox = document.getElementsByTagName("header");
+var footerBox = document.getElementsByTagName("footer");
+
+document.querySelector(".toggleLight").addEventListener("click", function () {
+  lightMode();
+});
+function lightMode() {
+  //main background color
+  document.body.style.backgroundColor = "#cbd5e1";
+
+  //menu background coloor
+  headerBox[0].style.backgroundColor = "#f1f5f9";
+
+  //date background color
+  footerBox[0].style.backgroundColor = "#f1f5f9";
+
+  //time background color
+  sectionBox[0].style.backgroundColor = "#f1f5f9";
+
+  //button background color
+  sectionBox[1].style.backgroundColor = "#f1f5f9";
+
+  //weather background color
+  sectionBox[2].style.backgroundColor = "#f1f5f9";
+
+  //notes background color
+  sectionBox[3].style.backgroundColor = "#f1f5f9";
+
+  //news background color
+  sectionBox[4].style.backgroundColor = "#f1f5f9";
+
+  //yeezy background color
+  sectionBox[5].style.backgroundColor = "#f1f5f9";
+}
+
+// dark mode toggle
+document.querySelector(".toggleDark").addEventListener("click", function () {
+  darkMode();
+});
+function darkMode() {
+  //main background color
+  document.body.style.backgroundColor = "#1e293b";
+
+  //menu background coloor
+  headerBox[0].style.backgroundColor = "#475569";
+
+  //date background color
+  footerBox[0].style.backgroundColor = "#475569";
+
+  //time background color
+  sectionBox[0].style.backgroundColor = "#475569";
+
+  //button background color
+  sectionBox[1].style.backgroundColor = "#475569";
+
+  //weather background color
+  sectionBox[2].style.backgroundColor = "#475569";
+
+  //notes background color
+  sectionBox[3].style.backgroundColor = "#475569";
+
+  //news background color
+  sectionBox[4].style.backgroundColor = "#475569";
+
+  //yeezy background color
+  sectionBox[5].style.backgroundColor = "#475569";
+}
 
 //begin weather app
 let weather = {
@@ -16,7 +85,11 @@ let weather = {
     const { speed } = data.wind;
     document.querySelector("#icon").src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
     document.querySelector("#description").innerText = description;
+<<<<<<< HEAD
     document.querySelector("#temp").innerText = temp + "°f";
+=======
+    document.querySelector("#temp").innerText = temp + " °f";
+>>>>>>> main
   },
   search: function () {
     this.fetchWeather(document.querySelector(".searchBar").value);
@@ -36,13 +109,19 @@ function newbutton() {
   var div = document.querySelector('.presetLinks');
   var input = document.querySelector('#getUrlForButton');
 
+<<<<<<< HEAD
   var dom = '<a href="https://' + input.value + '.com' + '" target="_blank">';
   dom += '<input type="button" class="rounded border-10 border-sky-300 bg-sky-300" value=" ' + input.value + ' "></a>';
 
+=======
+
+  var dom = '<a href="https://' + input.value + '.com' + '" target="_blank">';
+  dom += '<input type="button" class="mt-6 w-full min-h-[10vh] text-slate-800 text-7xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500" value=" ' + input.value + ' "></a>';
+
+>>>>>>> main
   div.innerHTML += dom;
 }
 //end web link button section
-
 
 //begin menu section
 //schedule modal
@@ -55,6 +134,10 @@ closeBtn1.addEventListener("click", closeModal1);
 window.addEventListener("click", clickOutsideModal1);
 
 function openModal1() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
   modal1.style.display = "block";
 }
 
@@ -78,6 +161,10 @@ closeBtn2.addEventListener("click", closeModal2);
 window.addEventListener("click", clickOutsideModal2);
 
 function openModal2() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
   modal2.style.display = "block";
 }
 
@@ -101,6 +188,10 @@ closeBtn3.addEventListener("click", closeModal3);
 window.addEventListener("click", clickOutsideModal3);
 
 function openModal3() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
   modal3.style.display = "block";
 }
 
@@ -124,6 +215,10 @@ closeBtn4.addEventListener("click", closeModal4);
 window.addEventListener("click", clickOutsideModal4);
 
 function openModal4() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
   modal4.style.display = "block";
 }
 
@@ -140,6 +235,7 @@ function clickOutsideModal4(event4) {
 
 
 // Jacob H's Section
+<<<<<<< HEAD
 
 
 fetch("https://api.goperigon.com/v1/all?apiKey=eed9a585-f20e-4441-bcf0-ea92298d2788")
@@ -153,6 +249,12 @@ fetch("https://api.goperigon.com/v1/all?apiKey=eed9a585-f20e-4441-bcf0-ea92298d2
 newsarticles = Array;
 console.log(newsarticles)
 });
+=======
+fetch("http://api.mediastack.com/v1/news?access_key=e88991d67556e60781314a23d73242b8")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+>>>>>>> main
 
 
 
@@ -162,13 +264,20 @@ console.log(newsarticles)
 // Jacob Z's Section
 /* Fetching Kanye's wisdom */
 async function getYeezy() {
+<<<<<<< HEAD
   const response = await fetch('https://api.kanye.rest');
   const data = await response.json();
   document.getElementById('quote').innerHTML = "''" + data.quote + "''" + '  -Kanye West';
 
+=======
+>>>>>>> main
 
+  const response = await fetch('https://api.kanye.rest');
+  const data = await response.json();
+  document.getElementById('quote').innerHTML = "''" + data.quote + "''" + '  -Kanye West';
 }
 getYeezy();
+
 /* Tellng the time */
 function time() {
   var currentDay = moment().format('dddd MMMM Do YYYY');
@@ -179,8 +288,59 @@ function time() {
 }
 setInterval(time, 1000);
 
+var saveBtn = document.getElementById('saveNoteBtn');
 
+function saveNote(){
 
+var board = document.getElementById('pinnedNotes');
+var content = document.getElementById('noteContent');
+var noteTitle = localStorage.getItem('title');
+var note = document.getElementById('note').value;
 
+localStorage.setItem('title', note);
 
+console.log(noteTitle);
+
+var pinnedNote = document.createElement('li');
+pinnedNote.innerHTML = noteTitle;
+board.appendChild(pinnedNote);
+
+}
+
+saveBtn.addEventListener('click',saveNote);
 // Andrew's Section
+
+// Calandar date
+document.getElementById('calMonth').innerHTML = moment().format('MMMM');
+
+let month = moment().format('MMMM');
+
+// Appends Calander dates per month
+let calandarBox = document.getElementById('calMain');
+function calandarDates() {
+    if (month === 'April' || month === 'June' || month === 'September' || month === 'November') {
+        for (let m = 0; m < 29; m++) {
+            let createDay = document.createElement("div");
+            let day = m;
+            calandarBox.appendChild(createDay);
+            createDay.classList.add('border', 'border-slate-500', 'm-0.5', 'text-white', 'box-border', 'h-24', 'p-4');
+            createDay.insertAdjacentHTML( 'beforeend', m+1);
+        }
+    } else if (month === 'January' || month === 'March' || month === 'May' || month === 'July' || month === 'August' || month === 'October' || month === 'December') {
+        for (let m = 0; m < 30; m++) {
+            let createDay = document.createElement("div");
+            calandarBox.appendChild(createDay);
+            createDay.setAttribute("class", 'border border-slate-500 m-0.5 text-white box-border h-24 p-4');
+            createDay.insertAdjacentHTML( 'beforeend', m+1);
+        }
+    } else {
+        for (let m = 0; m < 28; m++) {
+            let createDay = document.createElement("div");
+            calandarBox.appendChild(createDay);
+            createDay.setAttribute("class", 'border border-slate-500 m-0.5 text-white box-border h-24 p-4');
+            createDay.insertAdjacentHTML( 'beforeend', m+1);
+        }
+    };
+}
+
+calandarDates();
