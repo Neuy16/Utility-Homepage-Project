@@ -242,10 +242,26 @@ function time() {
 }
 setInterval(time, 1000);
 
+var saveBtn = document.getElementById('saveNoteBtn');
 
+function saveNote(){
 
+var board = document.getElementById('pinnedNotes');
+var content = document.getElementById('noteContent');
+var noteTitle = localStorage.getItem('title');
+var note = document.getElementById('note').value;
 
+localStorage.setItem('title', note);
 
+console.log(noteTitle);
+
+var pinnedNote = document.createElement('li');
+pinnedNote.innerHTML = noteTitle;
+board.appendChild(pinnedNote);
+
+}
+
+saveBtn.addEventListener('click',saveNote);
 // Andrew's Section
 
 // Calandar date

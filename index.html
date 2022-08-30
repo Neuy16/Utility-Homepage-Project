@@ -60,7 +60,8 @@
       <div class="modal-content">
         <span class="closeBtn3">&times;</span>
         <input type="text" id="note">
-        <textarea placeholder="your note here"></textarea>
+        <textarea id='noteContent' placeholder="your note here"></textarea>
+        <button class="rounded border-10 border-sky-300 bg-sky-300" id="saveNoteBtn">Save Note</button>
       </div>
     </div>
 
@@ -120,7 +121,7 @@
   <!-- Notes -->
   <section class="text-slate-300 bg-slate-600 rounded-lg min-h-[50vh] row-span-3">
     <h2>Pinned Notes</h2>
-    <ul>
+    <ul id="pinnedNotes">
       <li></li>
       <li></li>
       <li></li>
