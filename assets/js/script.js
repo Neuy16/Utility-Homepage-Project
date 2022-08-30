@@ -213,9 +213,17 @@ function clickOutsideModal4(event4) {
 
 
 // Jacob H's Section
-fetch("http://api.mediastack.com/v1/news?access_key=e88991d67556e60781314a23d73242b8")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+fetch("https://api.goperigon.com/v1/all?apiKey=eed9a585-f20e-4441-bcf0-ea92298d2788")
+.then(response => response.json())
+.then(data => {
+  let Array
+  for(let i=0; i<data.articles.length; i++){
+    Array = data.articles[i]
+    console.log(Array);
+  }
+newsarticles = Array;
+console.log(newsarticles)
+});
 
 
 
