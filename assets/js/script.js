@@ -86,6 +86,7 @@ let weather = {
     document.querySelector("#icon").src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
     document.querySelector("#description").innerText = description;
     document.querySelector("#temp").innerText = temp + " °f";
+
   },
   search: function () {
     this.fetchWeather(document.querySelector(".searchBar").value);
@@ -105,10 +106,8 @@ function newbutton() {
   var div = document.querySelector('.presetLinks');
   var input = document.querySelector('#getUrlForButton');
 
-
   var dom = '<a href="https://' + input.value + '.com' + '" target="_blank">';
   dom += '<input type="button" class="mt-6 w-full min-h-[10vh] text-slate-800 text-7xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500" value=" ' + input.value + ' "></a>';
-
   div.innerHTML += dom;
 }
 //end web link button section
@@ -124,7 +123,6 @@ closeBtn1.addEventListener("click", closeModal1);
 window.addEventListener("click", clickOutsideModal1);
 
 function openModal1() {
-
   modal1.style.display = "block";
 }
 
@@ -148,7 +146,6 @@ closeBtn2.addEventListener("click", closeModal2);
 window.addEventListener("click", clickOutsideModal2);
 
 function openModal2() {
-
   modal2.style.display = "block";
 }
 
@@ -172,7 +169,6 @@ closeBtn3.addEventListener("click", closeModal3);
 window.addEventListener("click", clickOutsideModal3);
 
 function openModal3() {
-
   modal3.style.display = "block";
 }
 
@@ -196,7 +192,6 @@ closeBtn4.addEventListener("click", closeModal4);
 window.addEventListener("click", clickOutsideModal4);
 
 function openModal4() {
-
   modal4.style.display = "block";
 }
 
@@ -221,19 +216,18 @@ fetch("https://api.goperigon.com/v1/all?apiKey=eed9a585-f20e-4441-bcf0-ea92298d2
     Array = data.articles[i]
     console.log(Array);
   }
+  
 newsarticles = Array;
 console.log(newsarticles)
 });
 
-
-
-
-
+fetch("http://api.mediastack.com/v1/news?access_key=e88991d67556e60781314a23d73242b8")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
 
 // Jacob Z's Section
 /* Fetching Kanye's wisdom */
 async function getYeezy() {
-
   const response = await fetch('https://api.kanye.rest');
   const data = await response.json();
   document.getElementById('quote').innerHTML = "''" + data.quote + "''" + '  -Kanye West';
