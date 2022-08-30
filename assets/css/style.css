@@ -2,102 +2,6 @@
 
 
 .modal {
-<<<<<<< HEAD
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%; 
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fff;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px;
-    width: 80vw;
-    height: 80vh;
-  }
-  
-  /* The Close Button */
-  .closeBtn1 {
-    color: grey;
-    float: right;
-    font-size: 28px;
-  }
-  .closeBtn1:hover,
-  .closeBtn1:focus {
-    color: red;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .closeBtn2 {
-    color: grey;
-    float: right;
-    font-size: 28px;
-  }
-  .closeBtn2:hover,
-  .closeBtn2:focus {
-    color: red;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .closeBtn3 {
-    color: grey;
-    float: right;
-    font-size: 28px;
-  }
-  .closeBtn3:hover,
-  .closeBtn3:focus {
-    color: red;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .closeBtn4 {
-    color: grey;
-    float: right;
-    font-size: 28px;
-  }
-  .closeBtn4:hover,
-  .closeBtn4:focus {
-    color: red;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  
-  
-  
-  /*Jacob H's Section
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  Jacob Z's Section
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  Andrew's Section  */
-=======
   display: none;
   position: fixed;
   z-index: 1;
@@ -190,4 +94,3 @@ Jacob Z's Section
 
 
 Andrew's Section  */
->>>>>>> main
