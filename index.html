@@ -12,13 +12,13 @@
     href="https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=ce799edeec116539e35783770070d97d" />
 </head>
 
-<body class="bg-slate-800 grid grid-cols-6 gap-1">
+<body class="text-slate-900 p-5 bg-slate-800 grid grid-cols-6 gap-5 h-[100vh]">
   <!-- the date -->
-  <div class=" rounded-lg shadow-lg bg-white row-span-2">
+  <section class="rounded-lg shadow-lg text-slate-900 bg-slate-600 h-[12vh]">
     <h1 id="date" class="text-5xl"></h1>
-  </div>
+  </section>
   <!-- calander -->
-  <div class="bg-slate-600 rounded-lg min-h-[50px] col-span-3 row-span-6 grid grid-row-7">
+  <div class="bg-slate-600 rounded-lg min-h-[70vh] col-span-3 row-span-6 grid grid-row-7">
     <h1>Calendar</h1>
     <div class="grid grid-cols-7 text-center border border-2 mx-20">
       <div id='calModal0' class="border border-slate-500 m-0.5 text-white box-border h-24 p-4">1</div>
@@ -54,11 +54,11 @@
     </div>
 
   </div>
-  <!-- header and buttons -->
-  <header class="bg-slate-600 rounded-lg min-h-[50px] col-span-2">
+  <!-- menu -->
+  <header class=" text-slate-900 bg-slate-600 rounded-lg h-[12vh] col-span-2 flex space-x-4 justify-center">
 
     <!-- Open The Schedule Modal -->
-    <button id="modalBtn1" class="rounded border-10 border-sky-300 bg-sky-300">Add Event to Schedule</button>
+    <button id="modalBtn1" class="h-full w-1/5 text-slate-800 text-xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500">Add Event to Schedule</button>
     <div id="modal1" class="modal">
       <div class="modal-content">
         <span class="closeBtn1">&times;</span>
@@ -67,7 +67,7 @@
     </div>
 
     <!-- Open The Web Link Modal -->
-    <button id="modalBtn2" class="rounded border-10 border-sky-300 bg-sky-300">Add Web Link</button>
+    <button id="modalBtn2" class="h-full w-1/5 text-slate-800 text-xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500">Add Web Link</button>
     <div id="modal2" class="modal">
       <div class="modal-content">
         <span class="closeBtn2">&times;</span>
@@ -83,7 +83,7 @@
     </div>
 
     <!-- Open The Notes Page -->
-    <button id="modalBtn3" class="rounded border-10 border-sky-300 bg-sky-300">Notes</button>
+    <button id="modalBtn3" class="h-full w-1/5 text-slate-800 text-xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500">Notes</button>
     <div id="modal3" class="modal">
       <div class="modal-content">
         <span class="closeBtn3">&times;</span>
@@ -93,7 +93,7 @@
     </div>
 
     <!--Open the settings modal-->
-    <button id="modalBtn4" class="rounded border-10 border-sky-300 bg-sky-300">Settings</button>
+    <button id="modalBtn4" class="h-full w-1/5 text-slate-800 text-xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500">Settings</button>
     <div id="modal4" class="modal">
       <div class="modal-content">
         <span class="closeBtn4">&times;</span>
@@ -106,37 +106,48 @@
             <button class="rounded border-10 border-sky-300 bg-sky-300">Get Weather</button>
           </div>
         </div>
+        <!--light/dark mode toggle-->
+        <p>Color Theme</p>
+        <div class="switch">
+          <button class=" toggleLight rounded border-10 p-4 m-4 border-sky-300 bg-sky-300">Light</button>
+          <button class=" toggleDark rounded border-10 p-4 m-4 border-sky-300 bg-sky-300">Dark</button>
+        </div>
+
       </div>
-
+    </div>
   </header>
-
   <!--begin web link button section-->
   <!--stores pre set web link buttons-->
-  <div class='presetLinks p-6 bg-slate-600 rounded-lg min-h-[50px] row-span-5 col-span-2'>
+  <section class='presetLinks place-content-stretch bg-slate-600 rounded-lg min-h-[20vh] max-h-[75vh] row-span-5 col-span-2'>
     <a href='https://stackoverflow.com/' target='_blank'><input type='button'
-        class="rounded border-10 border-sky-300 bg-sky-300" value='Stack Overflow'></a>
+        class="mt-6 w-full min-h-[10vh] text-slate-800 text-7xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500"
+        value='Stack Overflow'></a>
     <a href='https://github.com/' target='_blank'><input type='button'
-        class="rounded border-10 border-sky-300 bg-sky-300" value='GitHub'></a>
+        class="mt-6 w-full min-h-[10vh] text-slate-800 text-7xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500"
+        value='GitHub'></a>
     <a href='https://google.com/' target='_blank'><input type='button'
-        class="rounded border-10 border-sky-300 bg-sky-300" value='Google'></a>
-  </div>
-  <div class="rounded-lg border-10 shadow-lg bg-white rounded-lg min-h-[50px]">
-    <h1 id="time" class="text-8xl"></h1>
-  </div>
+        class="mt-6 w-full min-h-[10vh] text-slate-800 text-7xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500"
+        value='Google'></a>
+    </section>
+
+  <!--time-->
+  <section class="content-center rounded-lg shadow-lg text-slate-900 bg-slate-600 rounded-lg h-[12vh]">
+    <p id="time" class="text-9xl"></p>
+  </section>
   <!--end web link button section-->
 
   <!--begin weather app display-->
-  <div id="weather" class="text-white bg-slate-600 rounded-lg min-h-[50px]">
+  <section id="weather" class=" text-slate-300 bg-slate-600 rounded-lg shadow-lg text-3xl h-[15vh]">
     <div id="temp">temp in city</div>
     <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" id="icon" />
     <div id="description">description of weather</div>
-  </div>
+  </section>
 
   </div>
   <!--end weather app display-->
 
   <!-- Notes -->
-  <div class="bg-slate-600 rounded-lg min-h-[200px] row-span-3">
+  <section class="text-slate-300 bg-slate-600 rounded-lg min-h-[50vh] row-span-3">
     <h2>Pinned Notes</h2>
     <ul>
       <li></li>
@@ -147,20 +158,15 @@
       <li></li>
     </ul>
   </div>
-  </aside>
-
-  <!-- Center content -->
-  <!-- calandar -->
-
-
+</section>
 
   <!-- news -->
-  <div class="bg-slate-600 rounded-lg min-h-[70px] col-span-3">
+  <section class="text-slate-300 bg-slate-600 rounded-lg max-h-[25vh] col-span-3"> 
     <p>news section</p>
-  </div>
+  </section>
 
   <!--begiin kanye quote section-->
-  <footer class=" block p-6 rounded-lg shadow-lg bg-white min-h-[70px] col-span-2">
+  <footer class="block p-6 text-5xl rounded-lg shadow-lg text-slate-300 bg-slate-600 max-h-[30vh] col-span-2">
     <div id="quote"></div>
   </footer>
   <!--end end kanye quote section-->
@@ -168,6 +174,5 @@
   </script>
   <script src="./assets/js/script.js"></script>
 </body>
-
 
 </html>
