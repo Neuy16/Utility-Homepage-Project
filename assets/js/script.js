@@ -200,6 +200,7 @@ function clickOutsideModal4(event4) {
 
 // Jacob H's Section
 fetch("https://api.goperigon.com/v1/all?apiKey=eed9a585-f20e-4441-bcf0-ea92298d2788")
+
 .then(response => response.json())
 .then(data => {
   let Array
@@ -230,21 +231,41 @@ setInterval(time, 1000);
 
 var saveBtn = document.getElementById('saveNoteBtn');
 
-function saveNote(){
+var clrBtn = document.getElementById('clrList');
+var notes = JSON.parse(localStorage.getItem("allNotes"));
+if (notes === null) notes = [];
+function saveNote() {
+  var newEntry = document.createElement('div');
+  var board = document.getElementById('pinnedNotes');
+  var entry = document.getElementById("note").value;
+  var noteEntry = {
+    'note': entry
+  };
+  localStorage.setItem('noteEntry', JSON.stringify(noteEntry));
 
-var board = document.getElementById('pinnedNotes');
-var content = document.getElementById('noteContent');
-var noteTitle = localStorage.getItem('title');
-var note = document.getElementById('note').value;
+  notes.push(noteEntry);
+  localStorage.setItem('allNotes', JSON.stringify(notes));
 
-localStorage.setItem('title', note);
+  newEntry.textContent = entry;
+  board.appendChild(newEntry);
+}
+function displayNote() {
+  document.getElementById('note').value = '';
+  for (let i = 0; i < notes.length; i++) {
 
-var pinnedNote = document.createElement('li');
-pinnedNote.innerHTML = noteTitle;
-board.appendChild(pinnedNote);
+    newItem = document.createElement('div');
+    newItem.textContent = notes[i].note;
+    document.getElementById('pinnedNotes').appendChild(newItem);
+  };
+}
+displayNote();
+function clear() {
+  document.getElementById('pinnedNotes').innerHTML = '';
+  localStorage.clear();
 }
 
-saveBtn.addEventListener('click',saveNote);
+clrBtn.addEventListener('click', clear);
+saveBtn.addEventListener('click', saveNote);
 // Andrew's Section
 
 // Calandar date
@@ -255,6 +276,7 @@ let month = moment().format('MMMM');
 // Appends Calander dates per month
 let calandarBox = document.getElementById('calMain');
 function calandarDates() {
+
     if (month === 'April' || month === 'June' || month === 'September' || month === 'November') {
         for (let m = 0; m < 30; m++) {
             let createDay = document.createElement("div");
@@ -278,6 +300,7 @@ function calandarDates() {
             createDay.insertAdjacentHTML( 'beforeend', m+1);
         }
     };
+
 }
 
 calandarDates();
