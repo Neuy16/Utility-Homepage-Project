@@ -14,23 +14,23 @@
 
 <body class="text-slate-900 p-5 bg-slate-800 grid grid-cols-6 gap-5 h-[100vh]">
   <!-- the date -->
-  <section class="rounded-lg shadow-lg text-slate-900 bg-slate-600 h-[12vh]">
+  <section class="flex flex-auto flex-wrap flex-col justify-center items-center p-4 align-middle text-center text-slate-900 bg-slate-600 rounded-lg shadow-lg text-5xl h-[12vh]">
     <h1 id="date" class="text-5xl"></h1>
   </section>
-  <!-- calander -->
 
-  <section class="bg-slate-600 rounded-lg min-h-[50px] col-span-3 row-span-6 grid grid-row-7">
-    <h1 id="calMonth" class="text-center text-2xl rounded-t-lg bg-gradient-to-r from-cyan-700 to-sky-300">Calendar</h1>
-    <div id="calMain" class="grid grid-cols-7 text-center border border-2 mx-20">
+  <!-- calander -->
+  <section class="p-4 bg-slate-600 rounded-lg h-[60vh] col-span-3 row-span-6 grid grid-row-7">
+    <h1 id="calMonth" class="text-center align-middle p-4 mb-4 text-8xl rounded-lg bg-sky-300">Calendar</h1>
+    <div id="calMain" class="calanderStyle grid grid-cols-7 bg-slate-600 text-center mx-20">
     </div>
   </section>
 
   </div>
   <!-- menu -->
-  <header class=" text-slate-900 bg-slate-600 rounded-lg h-[12vh] col-span-2 flex space-x-4 justify-center">
+  <header class="p-4 flex justify-evenly text-slate-900 bg-slate-600 rounded-lg h-[12vh] col-span-2 flex space-x-4 justify-center">
 
     <!-- Open The Schedule Modal -->
-    <button id="modalBtn1" class="h-full w-1/5 text-slate-800 text-xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500">Add Event to Schedule</button>
+    <button id="modalBtn1" class="h-full w-1/5 text-slate-900 text-3xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500">Schedule</button>
     <div id="modal1" class="modal">
       <div class="modal-content">
         <span class="closeBtn1">&times;</span>
@@ -38,24 +38,26 @@
       </div>
     </div>
 
-    <!-- Open The Web Link Modal -->
-    <button id="modalBtn2" class="h-full w-1/5 text-slate-800 text-xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500">Add Web Link</button>
+    <!-- Open The bookmark Modal -->
+    <button id="modalBtn2" class="h-full w-1/5 text-slate-900 text-3xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500">Bookmark</button>
     <div id="modal2" class="modal">
       <div class="modal-content">
         <span class="closeBtn2">&times;</span>
         <!--creates new web link button-->
         <div class='buttonCreator'>
           <h3>input new website by name (not the url)</h3>
-          <input type='text' class=" rounded border-10 border-slate-600 bg-slate-600 placeholder-white"
-            id='getUrlForButton' placeholder="input website here"></input>
-          <input type='button' class="rounded border-10 border-sky-300 bg-sky-300" value='Create New Button'
+          <input type='text' class="w-full h-12 px-4 mb-2 text-lg text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline"
+            id='getWebName' placeholder="input bookmark Name"></input>
+          <input type='text' class="w-full h-12 px-4 mb-2 text-lg text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline"
+            id='getUrlForButton' placeholder="input website URL here"></input>
+          <input type='button' class="mt-5 flex flex-auto flex-wrap flex-col justify-center items-center p-4 align-middle text-center h-full w-full text-slate-900 text-3xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500" value='Create New Bookmark'
             onclick='newbutton();'></input>
         </div>
       </div>
     </div>
 
     <!-- Open The Notes Page -->
-    <button id="modalBtn3" class="h-full w-1/5 text-slate-800 text-xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500">Notes</button>
+    <button id="modalBtn3" class="h-full w-1/5 text-slate-900 text-3xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500">Notes</button>
     <div id="modal3" class="modal">
       <div class="modal-content">
         <span class="closeBtn3">&times;</span>
@@ -66,24 +68,24 @@
     </div>
 
     <!--Open the settings modal-->
-    <button id="modalBtn4" class="h-full w-1/5 text-slate-800 text-xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500">Settings</button>
+    <button id="modalBtn4" class="h-full w-1/5 text-slate-900 text-3xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500">Settings</button>
     <div id="modal4" class="modal">
       <div class="modal-content">
         <span class="closeBtn4">&times;</span>
-        <p>input your city</p>
+        <h2>Input your city</h2>
         <!--weather location searchbar-->
         <div class="weatherContainer">
           <div class="search">
-            <input type="text" class="searchBar rounded border-10 border-slate-600 bg-slate-600 placeholder-white"
+            <input type="text" class="searchBar w-full h-12 px-4 mb-2 text-lg text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline"
               placeholder="search">
-            <button class="rounded border-10 border-sky-300 bg-sky-300">Get Weather</button>
+            <button class="saveWeatherBtn mt-5 flex flex-auto flex-wrap flex-col justify-center items-center p-4 align-middle text-center h-full w-full text-slate-900 text-3xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500">Save</button>
           </div>
         </div>
-        <!--light/dark mode toggle-->
-        <p>Color Theme</p>
+        <!-- color themes-->
+        <h2>Select Color Theme</h2>
         <div class="switch">
-          <button class=" toggleLight rounded border-10 p-4 m-4 border-sky-300 bg-sky-300">Light</button>
-          <button class=" toggleDark rounded border-10 p-4 m-4 border-sky-300 bg-sky-300">Dark</button>
+          <button class=" toggleLight mt-5 flex flex-auto flex-wrap flex-col justify-center items-center p-4 align-middle text-center h-full w-full text-slate-900 text-3xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500">Light</button>
+          <button class=" toggleDark mt-5 flex flex-auto flex-wrap flex-col justify-center items-center p-4 align-middle text-center h-full w-full text-slate-900 text-3xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500">Dark</button>
         </div>
 
       </div>
@@ -91,29 +93,28 @@
   </header>
   <!--begin web link button section-->
   <!--stores pre set web link buttons-->
-  <section class='presetLinks place-content-stretch bg-slate-600 rounded-lg min-h-[20vh] max-h-[75vh] row-span-5 col-span-2'>
+  <section class='presetLinks flex flex-col flex-auto p-4 place-content-stretch bg-slate-600 rounded-lg min-h-[20vh] max-h-[75vh] row-span-5 col-span-2'>
     <a href='https://stackoverflow.com/' target='_blank'><input type='button'
-        class="mt-6 w-full min-h-[10vh] text-slate-800 text-7xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500"
+        class="text-center align-middle mt-6 w-full flex-auto p-3 max-h-[10vh] text-slate-800 text-7xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500"
         value='Stack Overflow'></a>
     <a href='https://github.com/' target='_blank'><input type='button'
-        class="mt-6 w-full min-h-[10vh] text-slate-800 text-7xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500"
+        class="text-center align-middle mt-6 w-full flex-auto p-3 max-h-[10vh] text-slate-800 text-7xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500"
         value='GitHub'></a>
     <a href='https://google.com/' target='_blank'><input type='button'
-        class="mt-6 w-full min-h-[10vh] text-slate-800 text-7xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500"
+        class="text-center align-middle mt-6 w-full flex-auto p-3 max-h-[10vh] text-slate-800 text-7xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500"
         value='Google'></a>
     </section>
 
   <!--time-->
-  <section class="content-center rounded-lg shadow-lg text-slate-900 bg-slate-600 rounded-lg h-[12vh]">
+  <section class="text-center align-middle rounded-lg shadow-lg text-slate-900 bg-slate-600 rounded-lg h-[12vh]">
     <p id="time" class="text-9xl"></p>
   </section>
   <!--end web link button section-->
 
   <!--begin weather app display-->
-  <section id="weather" class=" text-slate-300 bg-slate-600 rounded-lg shadow-lg text-3xl h-[15vh]">
-    <div id="temp">temp in city</div>
+  <section id="weather" class="flex flex-auto flex-wrap flex-col justify-center items-center p-4 align-middle text-center text-slate-900 bg-slate-600 rounded-lg shadow-lg text-5xl h-[15vh]">
+    <div id="temp" class="text-slate-900">Temperature</div>
     <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" id="icon" />
-    <div id="description">description of weather</div>
   </section>
 
   </div>
@@ -132,16 +133,15 @@
   </div>
 </section>
 
-
   <!-- news -->
-  <section class="text-slate-300 bg-slate-600 rounded-lg max-h-[25vh] col-span-3"> 
+  <section class="block p-6 text-5xl rounded-lg shadow-lg text-slate-300 bg-slate-600 h-[35vh] col-span-3"> 
     <div class="container" id="card">
 
     </div>
   </section>
 
-  <!--begiin kanye quote section-->
-  <footer class="block p-6 text-5xl rounded-lg shadow-lg text-slate-300 bg-slate-600 max-h-[30vh] col-span-2">
+  <!--begin kanye quote section-->
+  <footer class="block p-6 text-5xl rounded-lg shadow-lg text-slate-900 bg-slate-600 max-h-[35vh] col-span-2">
     <div id="quote"></div>
   </footer>
   <!--end end kanye quote section-->
