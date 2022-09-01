@@ -199,16 +199,18 @@ function clickOutsideModal4(event4) {
 //end menu section
 
 // Jacob H's Section
-fetch("https://api.goperigon.com/v1/all?apiKey=eed9a585-f20e-4441-bcf0-ea92298d2788")
-
-.then(response => response.json())
-.then(data => {
-  let Array
-  for(let i=0; i<data.articles.length; i++){
-    Array = data.articles[i]
-  }
-newsarticles = Array;
-});
+//display news article
+function newsContent() {
+  fetch("https://api.goperigon.com/v1/all?apiKey=71580e5a-7510-406c-adfa-9fee01756cf1")
+    .then(response => response.json())
+    .then(data => {
+      var displayContent = document.getElementById("card");
+      var randomArt = (data["articles"])[Math.floor(Math.random() * (data["articles"]).length)];
+      var artSummary = randomArt["summary"];
+      displayContent.innerHTML = artSummary;
+    });
+}
+newsContent();
 
 // Jacob Z's Section
 /* Fetching Kanye's wisdom */
@@ -230,6 +232,7 @@ function time() {
 setInterval(time, 1000);
 
 var saveBtn = document.getElementById('saveNoteBtn');
+
 
 var clrBtn = document.getElementById('clrList');
 var notes = JSON.parse(localStorage.getItem("allNotes"));
