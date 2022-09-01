@@ -207,16 +207,16 @@ function clickOutsideModal4(event4) {
 
 // Jacob H's Section
 fetch("https://api.goperigon.com/v1/all?apiKey=eed9a585-f20e-4441-bcf0-ea92298d2788")
-.then(response => response.json())
-.then(data => {
-  let Array
-  for(let i=0; i<data.articles.length; i++){
-    Array = data.articles[i]
-    console.log(Array);
-  }
-newsarticles = Array;
-console.log(newsarticles)
-});
+  .then(response => response.json())
+  .then(data => {
+    let Array
+    for (let i = 0; i < data.articles.length; i++) {
+      Array = data.articles[i]
+      console.log(Array);
+    }
+    newsarticles = Array;
+    console.log(newsarticles)
+  });
 
 // Jacob Z's Section
 /* Fetching Kanye's wisdom */
@@ -238,25 +238,41 @@ function time() {
 setInterval(time, 1000);
 
 var saveBtn = document.getElementById('saveNoteBtn');
+var clrBtn = document.getElementById('clrList');
+var notes = JSON.parse(localStorage.getItem("allNotes"));
+if (notes === null) notes = [];
+function saveNote() {
+  var newEntry = document.createElement('div');
+  var board = document.getElementById('pinnedNotes');
+  var entry = document.getElementById("note").value;
+  var noteEntry = {
+    'note': entry
+  };
+  localStorage.setItem('noteEntry', JSON.stringify(noteEntry));
 
-function saveNote(){
+  notes.push(noteEntry);
+  localStorage.setItem('allNotes', JSON.stringify(notes));
 
-var board = document.getElementById('pinnedNotes');
-var content = document.getElementById('noteContent');
-var noteTitle = localStorage.getItem('title');
-var note = document.getElementById('note').value;
+  newEntry.textContent = entry;
+  board.appendChild(newEntry);
+}
+function displayNote() {
+  document.getElementById('note').value = '';
+  for (let i = 0; i < notes.length; i++) {
 
-localStorage.setItem('title', note);
-
-console.log(noteTitle);
-
-var pinnedNote = document.createElement('li');
-pinnedNote.innerHTML = noteTitle;
-board.appendChild(pinnedNote);
-
+    newItem = document.createElement('div');
+    newItem.textContent = notes[i].note;
+    document.getElementById('pinnedNotes').appendChild(newItem);
+  };
+}
+displayNote();
+function clear() {
+  document.getElementById('pinnedNotes').innerHTML = '';
+  localStorage.clear();
 }
 
-saveBtn.addEventListener('click',saveNote);
+clrBtn.addEventListener('click', clear);
+saveBtn.addEventListener('click', saveNote);
 // Andrew's Section
 
 // Calandar date
@@ -267,29 +283,29 @@ let month = moment().format('MMMM');
 // Appends Calander dates per month
 let calandarBox = document.getElementById('calMain');
 function calandarDates() {
-    if (month === 'April' || month === 'June' || month === 'September' || month === 'November') {
-        for (let m = 0; m < 29; m++) {
-            let createDay = document.createElement("div");
-            let day = m;
-            calandarBox.appendChild(createDay);
-            createDay.classList.add('border', 'border-slate-500', 'm-0.5', 'text-white', 'box-border', 'h-24', 'p-4');
-            createDay.insertAdjacentHTML( 'beforeend', m+1);
-        }
-    } else if (month === 'January' || month === 'March' || month === 'May' || month === 'July' || month === 'August' || month === 'October' || month === 'December') {
-        for (let m = 0; m < 30; m++) {
-            let createDay = document.createElement("div");
-            calandarBox.appendChild(createDay);
-            createDay.setAttribute("class", 'border border-slate-500 m-0.5 text-white box-border h-24 p-4');
-            createDay.insertAdjacentHTML( 'beforeend', m+1);
-        }
-    } else {
-        for (let m = 0; m < 28; m++) {
-            let createDay = document.createElement("div");
-            calandarBox.appendChild(createDay);
-            createDay.setAttribute("class", 'border border-slate-500 m-0.5 text-white box-border h-24 p-4');
-            createDay.insertAdjacentHTML( 'beforeend', m+1);
-        }
-    };
+  if (month === 'April' || month === 'June' || month === 'September' || month === 'November') {
+    for (let m = 0; m < 29; m++) {
+      let createDay = document.createElement("div");
+      let day = m;
+      calandarBox.appendChild(createDay);
+      createDay.classList.add('border', 'border-slate-500', 'm-0.5', 'text-white', 'box-border', 'h-24', 'p-4');
+      createDay.insertAdjacentHTML('beforeend', m + 1);
+    }
+  } else if (month === 'January' || month === 'March' || month === 'May' || month === 'July' || month === 'August' || month === 'October' || month === 'December') {
+    for (let m = 0; m < 30; m++) {
+      let createDay = document.createElement("div");
+      calandarBox.appendChild(createDay);
+      createDay.setAttribute("class", 'border border-slate-500 m-0.5 text-white box-border h-24 p-4');
+      createDay.insertAdjacentHTML('beforeend', m + 1);
+    }
+  } else {
+    for (let m = 0; m < 28; m++) {
+      let createDay = document.createElement("div");
+      calandarBox.appendChild(createDay);
+      createDay.setAttribute("class", 'border border-slate-500 m-0.5 text-white box-border h-24 p-4');
+      createDay.insertAdjacentHTML('beforeend', m + 1);
+    }
+  };
 }
 
 calandarDates();

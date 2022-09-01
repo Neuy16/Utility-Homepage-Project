@@ -59,8 +59,7 @@
     <div id="modal3" class="modal">
       <div class="modal-content">
         <span class="closeBtn3">&times;</span>
-        <input type="text" id="note">
-        <textarea id='noteContent' placeholder="your note here"></textarea>
+        <input type="text" class="rounded border-10 border-slate-600 bg-slate-600 placeholder-white" id="note" placeholder="Add a Note">
         <button class="rounded border-10 border-sky-300 bg-sky-300" id="saveNoteBtn">Save Note</button>
       </div>
     </div>
@@ -121,14 +120,10 @@
   <!-- Notes -->
   <section class="text-slate-300 bg-slate-600 rounded-lg min-h-[50vh] row-span-3">
     <h2>Pinned Notes</h2>
-    <ul id="pinnedNotes">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    <div id="pinnedNotes">
+      
+    </div>
+    <button class="rounded border-10 border-sky-300 bg-sky-300" id="clrList">Clear list</button>
   </div>
 </section>
 
