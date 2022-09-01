@@ -1,5 +1,8 @@
 /* Dakota's Section*/
 
+body {
+  font-size: 1.5rem;
+}
 
 .modal {
   display: none;
@@ -20,7 +23,7 @@
   padding: 20px;
   border: 1px;
   width: 50vw;
-  height: 40vh;
+  height: 60vh;
   text-align: center;
   font-size: x-large;
 }

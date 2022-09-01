@@ -206,7 +206,7 @@ function clickOutsideModal4(event4) {
 // Jacob H's Section
 //display news article
 function newsContent() {
-  fetch("https://api.goperigon.com/v1/all?apiKey=71580e5a-7510-406c-adfa-9fee01756cf1")
+  fetch("https://api.goperigon.com/v1/all?apiKey=9885ceda-4ae2-4c51-a083-aa8401a1f4e2")
     .then(response => response.json())
     .then(data => {
       var displayContent = document.getElementById("card");
@@ -269,7 +269,8 @@ function displayNote() {
 displayNote();
 function clear() {
   document.getElementById('pinnedNotes').innerHTML = '';
-  localStorage.clear();
+  localStorage.removeItem('allNotes');
+  localStorage.removeItem('noteEntry');
 }
 
 clrBtn.addEventListener('click', clear);
@@ -290,21 +291,21 @@ function calandarDates() {
       let createDay = document.createElement("div");
       let day = m;
       calandarBox.appendChild(createDay);
-      createDay.classList.add('border', 'border-slate-900', 'm-0.5', 'text-white', 'box-border', 'h-24', 'p-4');
+      createDay.classList.add('border', 'border-slate-900', 'm-0.5', 'text-slate-900', 'box-border', 'h-[10vh]', 'p-4', 'w-[5vw]');
       createDay.insertAdjacentHTML('beforeend', m + 1);
     }
   } else if (month === 'January' || month === 'March' || month === 'May' || month === 'July' || month === 'August' || month === 'October' || month === 'December') {
     for (let m = 0; m < 31; m++) {
       let createDay = document.createElement("div");
       calandarBox.appendChild(createDay);
-      createDay.setAttribute("class", 'border border-slate-900 m-0.5 text-slate-900 text-5xl box-border h-24 p-4');
+      createDay.setAttribute("class", 'border border-slate-900 m-0.5 text-slate-900 text-5xl box-border h-[10vh] p-4');
       createDay.insertAdjacentHTML('beforeend', m + 1);
     }
   } else {
     for (let m = 0; m < 28; m++) {
       let createDay = document.createElement("div");
       calandarBox.appendChild(createDay);
-      createDay.setAttribute("class", 'border border-slate-900 m-0.5 text-slate-900 text-5xl box-border h-24 p-4');
+      createDay.setAttribute("class", 'border border-slate-900 m-0.5 text-slate-900 text-5xl box-border h-[10vh] p-4');
       createDay.insertAdjacentHTML('beforeend', m + 1);
     }
   };
