@@ -208,7 +208,7 @@ function clickOutsideModal4(event4) {
 // Jacob H's Section
 //display news article
 function newsContent() {
-  fetch("https://api.goperigon.com/v1/all?apiKey=eed9a585-f20e-4441-bcf0-ea92298d2788")
+  fetch("https://api.goperigon.com/v1/all?apiKey=71580e5a-7510-406c-adfa-9fee01756cf1")
     .then(response => response.json())
     .then(data => {
       var displayContent = document.getElementById("card");
