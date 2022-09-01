@@ -104,7 +104,7 @@ function newbutton() {
   var input = document.querySelector('#getUrlForButton');
   var webName = document.querySelector('#getWebName')
   var dom = '<a href="https://' + input.value + '.com' + '" target="_blank">';
-  dom += '<input type="button" class="text-center align-middle mt-6 w-full flex-auto p-3 max-h-[10vh] text-slate-800 text-7xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500" value=" ' + webName.value + ' "></a>';
+  dom += '<input type="button" class="text-center align-middle mt-6 w-full flex-auto p-3 max-h-[10vh] text-slate-800 transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500" value=" ' + webName.value + ' "></a>';
   div.innerHTML += dom;
 }
 //end web link button section
