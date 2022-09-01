@@ -15,12 +15,14 @@
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fff;
+  background-color: #cbd5e1;
   margin: 5% auto;
   padding: 20px;
   border: 1px;
-  width: 80vw;
-  height: 80vh;
+  width: 50vw;
+  height: 40vh;
+  text-align: center;
+  font-size: x-large;
 }
 
 /* The Close Button */

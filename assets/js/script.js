@@ -1,41 +1,43 @@
-// Dakota's Section   verylight#f1f5f9 light#cbd5e1   dark#475569 verydark#1e293b 
+// Dakota's Section   
 
-// light mode toggle
+//light theme colors
+var lightBlack = "#475569";
+var lightGray = "#cbd5e1";
+var lightLightGray = "#f1f5f9";
+
+//dark theme colors
+var darkBlack = "#0f172a";
+var darkGray = "#1e293b";
+var darkLightGray = "#475569";
+
+//gets items from page
 var sectionBox = document.getElementsByTagName("section");
 var headerBox = document.getElementsByTagName("header");
 var footerBox = document.getElementsByTagName("footer");
+var calanderColor = document.getElementsByClassName("calanderStyle")[0];
 
+// light mode toggle
 document.querySelector(".toggleLight").addEventListener("click", function () {
   lightMode();
 });
 
 function lightMode() {
   //main background color
-  document.body.style.backgroundColor = "#cbd5e1";
-
-  //menu background coloor
-  headerBox[0].style.backgroundColor = "#f1f5f9";
-
-  //date background color
-  footerBox[0].style.backgroundColor = "#f1f5f9";
-
-  //time background color
-  sectionBox[0].style.backgroundColor = "#f1f5f9";
-
-  //button background color
-  sectionBox[1].style.backgroundColor = "#f1f5f9";
-
-  //weather background color
-  sectionBox[2].style.backgroundColor = "#f1f5f9";
-
-  //notes background color
-  sectionBox[3].style.backgroundColor = "#f1f5f9";
-
-  //news background color
-  sectionBox[4].style.backgroundColor = "#f1f5f9";
-
-  //yeezy background color
-  sectionBox[5].style.backgroundColor = "#f1f5f9";
+  document.body.style.backgroundColor = lightLightGray;
+  //menu header background color
+  headerBox[0].style.backgroundColor = lightGray;
+  //kanye footer background color
+  footerBox[0].style.backgroundColor = lightGray;
+  //calander color
+  calanderColor.style.backgroundColor = lightGray;
+  //section boxes background color
+  sectionBox[0].style.backgroundColor = lightGray;
+  sectionBox[1].style.backgroundColor = lightGray;
+  sectionBox[2].style.backgroundColor = lightGray;
+  sectionBox[3].style.backgroundColor = lightGray;
+  sectionBox[4].style.backgroundColor = lightGray;
+  sectionBox[5].style.backgroundColor = lightGray;
+  sectionBox[6].style.backgroundColor = lightGray;
 }
 
 // dark mode toggle
@@ -44,25 +46,31 @@ document.querySelector(".toggleDark").addEventListener("click", function () {
 });
 
 function darkMode() {
-  //main background color
-  document.body.style.backgroundColor = "#1e293b";
-  //menu background coloor
-  headerBox[0].style.backgroundColor = "#475569";
-  //date background color
-  footerBox[0].style.backgroundColor = "#475569";
-  //time background color
-  sectionBox[0].style.backgroundColor = "#475569";
-  //button background color
-  sectionBox[1].style.backgroundColor = "#475569";
-  //weather background color
-  sectionBox[2].style.backgroundColor = "#475569";
-  //notes background color
-  sectionBox[3].style.backgroundColor = "#475569";
-  //news background color
-  sectionBox[4].style.backgroundColor = "#475569";
-  //yeezy background color
-  sectionBox[5].style.backgroundColor = "#475569";
+  //background color
+  document.body.style.backgroundColor = darkGray;
+  //menu header background color
+  headerBox[0].style.backgroundColor = darkLightGray;
+  //kanye footer background color
+  footerBox[0].style.backgroundColor = darkLightGray;
+  //calander color
+  calanderColor.style.backgroundColor = darkLightGray;
+  //section boxes background color
+  sectionBox[0].style.backgroundColor = darkLightGray;
+  sectionBox[1].style.backgroundColor = darkLightGray;
+  sectionBox[2].style.backgroundColor = darkLightGray;
+  sectionBox[3].style.backgroundColor = darkLightGray;
+  sectionBox[4].style.backgroundColor = darkLightGray;
+  sectionBox[5].style.backgroundColor = darkLightGray;
+  sectionBox[6].style.backgroundColor = darkLightGray;
 }
+//save weather to local storage
+var saveWeatherBtn = document.querySelector(".saveWeatherBtn");
+var userInput = document.querySelector(".searchBar");
+const saveWeatherToLocalStorage = () => {
+  localStorage.setItem("cityName", userInput.value)
+}
+saveWeatherBtn.addEventListener("click", saveWeatherToLocalStorage)
+var savedCity = localStorage.getItem("cityName")
 
 //begin weather app
 let weather = {
@@ -74,32 +82,29 @@ let weather = {
   },
 
   displayWeather: function (data) {
-    const { name } = data;
-    const { temp, humidity } = data.main;
-    const { icon, description } = data.weather[0];
-    const { speed } = data.wind;
+    const temp = data.main['temp'];
+    const icon = data.weather[0]['icon'];
+    
     document.querySelector("#icon").src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
-    document.querySelector("#description").innerText = description;
     document.querySelector("#temp").innerText = temp + " °f";
   },
   search: function () {
     this.fetchWeather(document.querySelector(".searchBar").value);
   },
 };
-
 document.querySelector(".search button").addEventListener("click", function () {
   weather.search();
 });
-
-weather.fetchWeather("Detroit");
+weather.fetchWeather(savedCity);
 //end weather app
 
 //begin web link button section
-var div = document.querySelector('.presetLinks');
-var input = document.querySelector('#getUrlForButton');
 function newbutton() {
+  var div = document.querySelector('.presetLinks');
+  var input = document.querySelector('#getUrlForButton');
+  var webName = document.querySelector('#getWebName')
   var dom = '<a href="https://' + input.value + '.com' + '" target="_blank">';
-  dom += '<input type="button" class="mt-6 w-full min-h-[10vh] text-slate-800 text-7xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500" value=" ' + input.value + ' "></a>';
+  dom += '<input type="button" class="text-center align-middle mt-6 w-full flex-auto p-3 max-h-[10vh] text-slate-800 text-7xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500" value=" ' + webName.value + ' "></a>';
   div.innerHTML += dom;
 }
 //end web link button section
@@ -280,29 +285,29 @@ let month = moment().format('MMMM');
 let calandarBox = document.getElementById('calMain');
 function calandarDates() {
 
-    if (month === 'April' || month === 'June' || month === 'September' || month === 'November') {
-        for (let m = 0; m < 30; m++) {
-            let createDay = document.createElement("div");
-            let day = m;
-            calandarBox.appendChild(createDay);
-            createDay.classList.add('border', 'border-slate-500', 'm-0.5', 'text-white', 'box-border', 'h-24', 'p-4');
-            createDay.insertAdjacentHTML( 'beforeend', m+1);
-        }
-    } else if (month === 'January' || month === 'March' || month === 'May' || month === 'July' || month === 'August' || month === 'October' || month === 'December') {
-        for (let m = 0; m < 31; m++) {
-            let createDay = document.createElement("div");
-            calandarBox.appendChild(createDay);
-            createDay.setAttribute("class", 'border border-slate-500 m-0.5 text-white box-border h-24 p-4');
-            createDay.insertAdjacentHTML( 'beforeend', m+1);
-        }
-    } else {
-        for (let m = 0; m < 28; m++) {
-            let createDay = document.createElement("div");
-            calandarBox.appendChild(createDay);
-            createDay.setAttribute("class", 'border border-slate-500 m-0.5 text-white box-border h-24 p-4');
-            createDay.insertAdjacentHTML( 'beforeend', m+1);
-        }
-    };
+  if (month === 'April' || month === 'June' || month === 'September' || month === 'November') {
+    for (let m = 0; m < 30; m++) {
+      let createDay = document.createElement("div");
+      let day = m;
+      calandarBox.appendChild(createDay);
+      createDay.classList.add('border', 'border-slate-900', 'm-0.5', 'text-white', 'box-border', 'h-24', 'p-4');
+      createDay.insertAdjacentHTML('beforeend', m + 1);
+    }
+  } else if (month === 'January' || month === 'March' || month === 'May' || month === 'July' || month === 'August' || month === 'October' || month === 'December') {
+    for (let m = 0; m < 31; m++) {
+      let createDay = document.createElement("div");
+      calandarBox.appendChild(createDay);
+      createDay.setAttribute("class", 'border border-slate-900 m-0.5 text-slate-900 text-5xl box-border h-24 p-4');
+      createDay.insertAdjacentHTML('beforeend', m + 1);
+    }
+  } else {
+    for (let m = 0; m < 28; m++) {
+      let createDay = document.createElement("div");
+      calandarBox.appendChild(createDay);
+      createDay.setAttribute("class", 'border border-slate-900 m-0.5 text-slate-900 text-5xl box-border h-24 p-4');
+      createDay.insertAdjacentHTML('beforeend', m + 1);
+    }
+  };
 
 }
 
