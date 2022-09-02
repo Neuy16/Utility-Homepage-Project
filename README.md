@@ -18,7 +18,10 @@ The Creators:
 
 Links to Project:
 Github - https://github.com/Neuy16/Utility-Homepage-Project
-Deployed App - 
+Deployed App - https://neuy16.github.io/Utility-Homepage-Project/
 
 Presentation Link:
-URL - 
+URL - https://docs.google.com/presentation/d/1LYZmL7pw9MVETsXCJ8c8sAKegKOVmkYuBS6TJ4o9s3E/edit?usp=sharing
+
+![project 1](https://user-images.githubusercontent.com/108505695/188039311-1741910d-e142-41ce-ae36-1eedf0d145cb.png)
+
