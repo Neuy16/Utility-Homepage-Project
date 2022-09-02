@@ -21,6 +21,6 @@ Github - https://github.com/Neuy16/Utility-Homepage-Project
 Deployed App - https://neuy16.github.io/Utility-Homepage-Project/
 
 Presentation Link:
-URL - https://docs.google.com/presentation/d/1LYZmL7pw9MVETsXCJ8c8sAKegKOVmkYuBS6TJ4o9s3E/edit#slide=id.p
+URL - https://docs.google.com/presentation/d/1LYZmL7pw9MVETsXCJ8c8sAKegKOVmkYuBS6TJ4o9s3E/edit?usp=sharing
 
 ![](../Pictures/Camera%20Roll/project%201.png)
