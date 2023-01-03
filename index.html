@@ -8,8 +8,7 @@
   <link rel="stylesheet" href="./assets/css/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <!--weather app api link-->
-  <link
-    href="https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=ce799edeec116539e35783770070d97d" />
+  
 </head>
 
 <body class="text-slate-900 p-5 bg-slate-800 grid grid-cols-6 gap-5 h-[100vh]">
@@ -58,7 +57,7 @@
             id='getWebName' placeholder="input bookmark Name"></input>
           <input type='text'
             class="w-full h-12 px-4 mb-2 text-lg text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline"
-            id='getUrlForButton' placeholder="input website URL here"></input>
+            id='getUrlForButton' placeholder="input website here"></input>
           <input type='button'
             class="mt-5 flex flex-auto flex-wrap flex-col justify-center items-center p-4 align-middle text-center h-full w-full text-slate-900 text-3xl transition-colors duration-150 bg-sky-300 rounded-lg focus:shadow-outline hover:bg-sky-500"
             value='Create New Bookmark' onclick='newbutton();'></input>
@@ -123,17 +122,16 @@
   </section>
 
   <!--time-->
-  <section class="text-center align-middle rounded-lg shadow-lg text-slate-900 bg-slate-600 rounded-lg h-[12vh]">
+  <section class="text-center align-middle rounded-lg shadow-lg text-slate-900 bg-slate-600 rounded-lg h-[20vh]">
     <p id="time" class="mt-5 sm:text-base md:text-3xl lg:text-5xl"></p>
   </section>
   <!--end web link button section-->
 
   <!--begin weather app display-->
-  <section id="weather"
+  <!-- <section id="weather"
     class="flex flex-auto flex-wrap flex-col justify-center items-center p-4 align-middle text-center text-slate-900 bg-slate-600 rounded-lg shadow-lg h-[15vh]">
-    <div id="temp" class="text-slate-900">Temperature</div>
-    <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="weather condition picture" id="icon" />
-  </section>
+    
+  </section> -->
 
   </div>
   <!--end weather app display-->
